@@ -1,0 +1,42 @@
+//  Crerating a promise .
+function trackFitness(exercise, duration) {
+    //Implement your promise here
+    const promise = new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+        if(duration>0){
+            resolve(duration);
+            console.log(`${exercise}, ${duration} minutes`);
+        }else if(duration<0){
+            reject("Invalid duration. Please provide a positive number");
+        }
+            
+        },5000);
+    });
+    
+    
+    return promise;
+    
+  }
+  trackFitness("Running", 30)
+    .then((duration) => {
+      console.log(`Total duration: ${duration} minutes.`);
+    })
+    .catch((error) => {
+      console.log(`Failed to track fitness: ${error}`);
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
